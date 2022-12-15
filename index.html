@@ -1,0 +1,357 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Математическая логика и тория алгоритмов</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.css" integrity="sha384-vKruj+a13U8yHIkAyGgK1J3ArTLzrFGBbBc0tDp4ad/EyewESeXE/Iv67Aj8gKZ0" crossorigin="anonymous">
+
+		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/katex.min.js" integrity="sha384-PwRUT/YqbnEjkZO0zZxNqcxACrXe+j766U2amXcgMg5457rve2Y7I6ZJSm2A0mS4" crossorigin="anonymous"></script>
+
+		<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.4/dist/contrib/auto-render.min.js" integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"
+			onload="renderMathInElement(document.body);"></script>
+
+		<style>
+			table, tr, td, th {
+				border: 1px solid white;
+				padding: 3px;
+				text-align: center;
+			}
+			table {
+				border-collapse: collapse;
+			}
+			.button {
+				background-color: rgb(56,79,56);
+				width: 260px;
+				height: 70px;
+				color: white;
+				align-content: center;
+				font-size: 20px;
+				cursor: pointer;
+        	}
+			#sortSteps
+			{
+				width: auto;
+				height: 150px;
+				align-content: center;
+				padding: 20px;
+				overflow-y: scroll;
+			}
+			#sortList
+			{
+				width: 200px;
+				height: 50px;
+				font-size: 14px;
+				align-content: center;
+			}
+			.redText
+			{
+				color: red;
+			}
+			.layer {
+				width: auto;
+				height: 580px;
+				overflow-y: scroll;
+				padding: 5px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-markdown>
+					 Математическая логика и теория алгоритмов		
+					 -----------------------------------------		
+				</section>
+
+				<section data-markdown>
+					Математическая логика
+					-----------
+					 Математическая логика — раздел математики, изучающий математические
+					  обозначения, формальные системы, 
+					  доказуемость математических суждений, 
+					  природу математического доказательства в целом,
+					  вычислимость и прочие аспекты оснований математики
+				</section>
+
+				<section data-markdown>
+					Таблица истинностей
+					-----------
+					 Таблица истинностей - таблица, описывающая логическую
+					 операцию
+				</section>
+
+				<section data-markdown>
+					Конъюнкция
+					-----------
+					Конъюнкция — логическая операция, по смыслу максимально приближенная 
+					к союзу «и».
+				</section>
+				<section data-menu-title="Таблица истинности конъюнкции">
+					<table name="tableAnd">
+						<caption>Конъюнкция</caption>
+						<thead>
+							<tr>
+								<td id="cell">$$A$$</td>
+								<td id="cell">$$B$$</td>
+								<td id="cell">$$A \land B$$</td>
+							</tr>
+						</thead>
+					</table>
+				</section>
+
+				<section data-markdown>
+					Дизъюнкция
+					-----------
+					Дизъюкция логи́ческое сложеение, логиическое ИЛИ, включаающее ИЛИ — логическая операция, 
+					по своему применению максимально приближённая к союзу «или» в смысле «или то, или это, или оба сразу».
+				</section>
+				<section data-menu-title="Таблица истинности дизъюнкции">
+					<table name="tableOr">
+						<caption>Дизъюнкция</caption>
+						<thead>
+							<tr>
+								<td id="cell">$$A$$</td>
+								<td id="cell">$$B$$</td>
+								<td id="cell">$$A \vee B$$</td>
+							</tr>
+						</thead>
+					</table>
+				</section>
+
+				<section data-markdown>
+					Инверсия
+					-----------
+					Отрицание — унарная операция над суждениями, 
+					результатом которой является суждение, 
+					«противоположное» исходному.
+				</section>
+				<section data-menu-title="Таблица истинности инверсии">
+					<table name="tableNot">
+						<caption>Инверсия</caption>
+						<thead>
+							<tr>
+								<td id="cell">$$A$$</td>
+								<td id="cell">$$\neg A$$</td>
+							</tr>
+						</thead>
+					</table>
+				</section>
+
+				<section data-markdown>
+					Импликация
+					-----------
+					Импликация — бинарная логическая связка, 
+					по своему применению приближенная к союзам «если..., то...».
+				</section>
+				<section data-menu-title="Таблица истинности импликации">
+					<table name="tableImplication">
+						<caption>Импликация</caption>
+						<thead>
+							<tr>
+								<td id="cell">$$A$$</td>
+								<td id="cell">$$B$$</td>
+								<td id="cell">$$A \rightarrow B$$</td>
+							</tr>
+						</thead>
+					</table>
+				</section>
+
+				<section data-markdown>
+					Эквиваленция
+					-----------
+					Эквиваленция — это логическое выражение, которое 
+					является истинным тогда,
+					 когда оба простых логических выражения 
+					 имеют одинаковую истинность.
+				</section>
+				<section data-menu-title="Таблица истинности эквиваленции">
+					<table name="tableEquivalent">
+						<caption>Эквиваленция</caption>
+						<thead>
+							<tr>
+								<td id="cell">$$A$$</td>
+								<td id="cell">$$B$$</td>
+								<td id="cell">$$A \sim B$$</td>
+							</tr>
+						</thead>
+					</table>
+				</section>
+
+				<section data-markdown>
+					Исключающее ИЛИ
+					-----------
+					Исключающее ИЛИ — булева функция, а также логическая и битовая операция,
+					 в случае двух переменных результат выполнения 
+					 операции истинен тогда и только тогда, когда один из аргументов 
+					 истинен, а другой — ложен.
+				</section>
+				<section data-menu-title="Таблица истинности исключающего ИЛИ">
+					<table name="tableExclusiveOr">
+						<caption>Эквиваленция</caption>
+						<thead>
+							<tr>
+								<td id="cell">$$A$$</td>
+								<td id="cell">$$B$$</td>
+								<td id="cell">$$A \oplus B$$</td>
+							</tr>
+						</thead>
+					</table>
+				</section>
+
+				<section data-markdown>
+					Условная дизъюнкция
+					-----------
+					Условная дизъюнкция — тернарная логическая связка, 
+					по своему применению приближенная к «Если..., то..., иначе...».
+				</section>
+				<section data-menu-title="Таблица истинности условной дизъюнкции">
+					<div class="layer">
+						<table name="tableСonditionalDisjunction">
+							<caption>Условная дизъюнкция</caption>
+							<thead>
+								<tr>
+									<td id="cell">$$A$$</td>
+									<td id="cell">$$B$$</td>
+									<td id="cell">$$C$$</td>
+									<td id="cell">$$(B\rightarrow A)\land(\neg B\rightarrow C)$$</td>
+								</tr>
+							</thead>
+						</table>
+					</div>
+				</section>
+
+				<section data-markdown>
+					Стрелка Пирса
+					-----------
+					Стрелка Пирса — бинарная логическая связка, 
+					по своему применению приближенная к союзам «не..., не...».
+				</section>
+				<section data-menu-title="Таблица истинности стрелки пирса">
+					<table name="tablePierArrow">
+						<caption>Стрелка Пирса</caption>
+						<thead>
+							<tr>
+								<td id="cell">$$A$$</td>
+								<td id="cell">$$B$$</td>
+								<td id="cell">$$A \downarrow B$$</td>
+							</tr>
+						</thead>
+					</table>
+				</section>
+
+				<section data-markdown>
+					Штрих Шеффера
+					-----------
+					Штрих шеффера — бинарная логическая операция, 
+					эквивалентная отрицанию конъюнкции.
+				</section>
+				<section data-menu-title="Таблица истинности штриха Шеффера">
+					<table name="tableScheffersStroke">
+						<caption>Штрих Шеффера</caption>
+						<thead>
+							<tr>
+								<td id="cell">$$A$$</td>
+								<td id="cell">$$B$$</td>
+								<td id="cell">$$A \mid B$$</td>
+							</tr>
+						</thead>
+					</table>
+				</section>
+
+				<section data-markdown>
+					Теория алгоритмов
+					-----------------
+				</section>
+
+				<section data-markdown>
+					Теория алгоритмов
+					-----------------
+					Теория алгоритмов — раздел математики, изучающий общие свойства 
+					и закономерности алгоритмов и разнообразные 
+					формальные модели их представления
+				</section>
+
+				<section data-markdown>
+					Алгоритм сортировки
+					-------------------
+					Алгоритм сортировки — это алгоритм для упорядочивания элементов в массиве.
+				</section>
+
+				<section data-markdown data-menu-title="Виды алгоритмов сортировок">
+					Виды алгоритмов сортировки
+					-------------------------
+
+					1. Пузырьковая сортировка 
+					2. Сортировка вставками 
+					3. Шейкерная сортировка
+					4. Случайная сортировка
+					5. Сортировка слиянием
+					6. Сортировка выбором
+					7. Быстрая сортировка
+					8. Сортировка подсчетом
+				</section>
+
+				<section data-menu-title="Алгоритмы сортировок на примерах">
+					<div id="sortSteps">
+						<ol id="steps">
+
+						</ol>
+					</div>
+
+					<input type="button" value=" Сгенерировать массив" id="generate" class="button">	
+					<input type="button" value=" Отсортировать" id="sort" class="button">	
+					<br>
+					<select id="sortList">
+						<option value="bubbleSort">Пузырьковая сортировка</option>
+						<option value="insertionSort">Сортировка вставками</option>
+						<option value="selectionSort">Сортировка выбором</option>
+						<option value="simpleCountingSort">Сортировка подсчетом</option>
+					</select>	
+				</section>
+
+				<section data-menu-title="photokartochka">
+					<img src="pictures/amBg45o_460s.jpg">
+				</section>
+
+				<section data-markdown>
+					Спасибо за внимание
+					==================
+				</section>
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="js/truthTables.js"></script>
+		<script src="js/sort.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				embedded: false,
+				controls: true,
+				mouseWheel: true,
+				slideNumber: true,
+
+				dependencies:[{src: 'plugin/menu/menu.js', async: true}],
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
